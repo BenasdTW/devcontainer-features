@@ -14,7 +14,7 @@ echo "The effective dev container remoteUser's home directory is '$_REMOTE_USER_
 echo "The effective dev container containerUser is '$_CONTAINER_USER'"
 echo "The effective dev container containerUser's home directory is '$_CONTAINER_USER_HOME'"
 
-apt-get update && apt-get install -y ripgrep fd-find python3-venv luarocks npm
+apt-get update && apt-get install -y ripgrep fd-find python3-venv luarocks npm curl
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 tar -C /opt -xzf nvim-linux64.tar.gz
 

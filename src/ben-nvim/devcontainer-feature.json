@@ -1,0 +1,12 @@
+{
+    "name": "ben nvim",
+    "id": "ben-nvim",
+    "version": "1.0.0",
+    "description": "Installs my neovim settings",
+    "options": {
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers/features/git"
+    ]
+}

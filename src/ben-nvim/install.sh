@@ -14,8 +14,13 @@ echo "The effective dev container remoteUser's home directory is '$_REMOTE_USER_
 echo "The effective dev container containerUser is '$_CONTAINER_USER'"
 echo "The effective dev container containerUser's home directory is '$_CONTAINER_USER_HOME'"
 
-apt-get update && apt-get install -y ripgrep fd-find python3-venv luarocks npm curl shfmt
-npm i @johnnymorganz/stylua-bin
+apt-get update && apt-get install -y ripgrep fd-find python3-venv luarocks npm curl tar
+apt-get install -y shfmt
+# npm i @johnnymorganz/stylua-bin
+
+# Install stylua
+curl -fLo /usr/local/bin/stylua https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux.zip && chmod +x /usr/local/bin/stylua
+
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 tar -C /opt -xzf nvim-linux64.tar.gz
 
@@ -35,7 +40,7 @@ git clone https://github.com/BenasdTW/nvim-config.git /root/.config/nvim
 
 # Install Neovim plugins
 /opt/nvim-linux64/bin/nvim --headless +Lazy! sync +qa
-/opt/nvim-linux64/bin/nvim --headless +LazyHealth! +qa
+# /opt/nvim-linux64/bin/nvim --headless +LazyHealth! +qa
 
 cat > /opt/start.sh \
 << EOF
